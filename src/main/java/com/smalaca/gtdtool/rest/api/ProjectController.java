@@ -12,7 +12,7 @@ public class ProjectController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/project")
-    public Project project(@RequestParam(value = "name", defaultValue = "Some project") String name) {
-        return new Project(counter.incrementAndGet(), name);
+    public Project project(@RequestParam(value = "name", defaultValue = "Some project") String projectName) {
+        return new Project(counter.incrementAndGet(), projectName);
     }
 }
