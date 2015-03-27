@@ -8,6 +8,16 @@
   <packaging>jar</packaging>
 
   <name>gtdtool</name>
+  <description>GTD Tool is an application which will increase your productivity.</description>
+  <url>letstalkaboutjava.blogspot.com</url>
+  <developers>
+    <developer>
+      <name>Sebastian Malaca</name>
+    </developer>
+  </developers>
+  <organization>
+    <name>Sebastian Malaca</name>
+  </organization>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
