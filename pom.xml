@@ -32,6 +32,7 @@
     <mockito.version>1.10.19</mockito.version>
     <failsafe.and.surefire.version>2.16</failsafe.and.surefire.version>
     <checkstyle.plugin.version>2.15</checkstyle.plugin.version>
+    <pmd.plugin.version>3.4</pmd.plugin.version>
   </properties>
 
   <dependencies>
@@ -68,6 +69,12 @@
       <artifactId>maven-checkstyle-plugin</artifactId>
       <version>${checkstyle.plugin.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-pmd-plugin</artifactId>
+      <version>${pmd.plugin.version}</version>
+    </dependency>
+
   </dependencies>
 
   <build>
@@ -162,6 +169,20 @@
                   <configLocation>config/static-analysis/checkstyle.xml</configLocation>
                   <violationSeverity>warning</violationSeverity>
                 </configuration>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-pmd-plugin</artifactId>
+            <version>${pmd.plugin.version}</version>
+            <executions>
+              <execution>
+                <phase>validate</phase>
                 <goals>
                   <goal>check</goal>
                 </goals>
