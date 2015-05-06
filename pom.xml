@@ -41,6 +41,7 @@
     <findbugs.plugin.version>3.0.1</findbugs.plugin.version>
     <jacoco.version>0.7.4.201502262128</jacoco.version>
     <javancss.version>2.1</javancss.version>
+    <classycle.version>0.4</classycle.version>
   </properties>
 
   <dependencies>
@@ -100,6 +101,12 @@
       <groupId>org.codehaus.mojo</groupId>
       <artifactId>javancss-maven-plugin</artifactId>
       <version>${javancss.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.pitest</groupId>
+      <artifactId>classycle-maven-plugin</artifactId>
+      <version>${classycle.version}</version>
     </dependency>
   </dependencies>
 
@@ -333,6 +340,24 @@
             <executions>
               <execution>
                 <id>check</id>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+
+          <plugin>
+            <groupId>org.pitest</groupId>
+            <artifactId>classycle-maven-plugin</artifactId>
+            <version>${classycle.version}</version>
+            <configuration>
+              <dependencyDefinitionFile>${project.config.directory}/static-analysis/classycle-package-dependency.txt</dependencyDefinitionFile>
+              <outputFile>classycle-package-dependency-result.txt</outputFile>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>compile</phase>
                 <goals>
                   <goal>check</goal>
                 </goals>
