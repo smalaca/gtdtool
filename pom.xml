@@ -194,6 +194,9 @@
                 <configuration>
                   <configLocation>${project.config.directory}/static-analysis/checkstyle.xml</configLocation>
                   <violationSeverity>warning</violationSeverity>
+                  <excludes>
+                    com/smalaca/gtdtool/Application.*
+                  </excludes>
                 </configuration>
                 <goals>
                   <goal>check</goal>
