@@ -5,4 +5,4 @@ jdk:
 
 script:
   - mvn -Pstatic-analysis clean verify
-  - mvn clean spring-boot:run &; mvn -Psystem integration-test
+  - mvn clean spring-boot:run -Psystem integration-test
