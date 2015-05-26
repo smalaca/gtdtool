@@ -4,7 +4,7 @@ jdk:
   - oraclejdk8
 
 before_script:
-  - mvn clean spring-boot:run
+  - mvn clean spring-boot:run &
 
 script:
   - mvn -Pstatic-analysis clean verify
