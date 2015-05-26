@@ -5,4 +5,5 @@ jdk:
 
 script:
   - mvn -Pstatic-analysis clean verify
-  - chmod ugo+x ./scripts/run-system-tests.sh && ./scripts/run-system-tests.sh
+  - mvn clean spring-boot:run &
+    mvn -Psystem clean integration-test
