@@ -1,15 +1,23 @@
 package com.smalaca.gtdtool.systemtests.stories;
 
+import com.smalaca.gtdtool.Application;
 import com.smalaca.gtdtool.systemtests.JBehaveConfiguration;
 import com.smalaca.gtdtool.systemtests.restclient.GtdToolRestClient;
 import com.smalaca.gtdtool.systemtests.restclient.dto.ProjectDTO;
 import org.jbehave.core.annotations.Given;
 import org.jbehave.core.annotations.Then;
 import org.jbehave.core.annotations.When;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.WebIntegrationTest;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = Application.class)
+@WebIntegrationTest
 public class ProjectStories extends JBehaveConfiguration {
 
     private String projectName;
