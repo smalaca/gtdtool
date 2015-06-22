@@ -42,6 +42,7 @@
     <jacoco.version>0.7.4.201502262128</jacoco.version>
     <javancss.version>2.1</javancss.version>
     <classycle.version>0.4</classycle.version>
+    <httpmime.version>4.2.3</httpmime.version>
   </properties>
 
   <dependencies>
@@ -70,6 +71,18 @@
       <groupId>org.jbehave</groupId>
       <artifactId>jbehave-spring</artifactId>
       <version>${jbehave.spring.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>${httpclient.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpmime</artifactId>
+      <version>${httpmime.version}</version>
     </dependency>
 
     <!-- STATIC ANALYSIS -->
@@ -166,6 +179,7 @@
                   <includes>
                     <include>**/*Stories.java</include>
                   </includes>
+                  <storyTimeoutInSecs>60</storyTimeoutInSecs>
                   <ignoreFailureInStories>false</ignoreFailureInStories>
                   <ignoreFailureInView>false</ignoreFailureInView>
                 </configuration>

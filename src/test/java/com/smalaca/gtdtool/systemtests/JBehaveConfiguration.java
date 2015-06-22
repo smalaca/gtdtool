@@ -4,6 +4,7 @@ import org.jbehave.core.Embeddable;
 import org.jbehave.core.configuration.Configuration;
 import org.jbehave.core.configuration.MostUsefulConfiguration;
 import org.jbehave.core.embedder.Embedder;
+import org.jbehave.core.failures.FailingUponPendingStep;
 import org.jbehave.core.i18n.LocalizedKeywords;
 import org.jbehave.core.io.LoadFromClasspath;
 import org.jbehave.core.junit.JUnitStory;
@@ -22,6 +23,8 @@ public abstract class JBehaveConfiguration extends JUnitStory {
         Embedder embedder = super.configuredEmbedder();
 
         embedder.embedderControls()
+                .doFailOnStoryTimeout(true)
+                .useStoryTimeoutInSecs(60)
                 .doGenerateViewAfterStories(false)
                 .doIgnoreFailureInStories(false);
 
@@ -40,6 +43,7 @@ public abstract class JBehaveConfiguration extends JUnitStory {
 
         return new MostUsefulConfiguration()
                 .useParameterConverters(parameterConverters)
+                .usePendingStepStrategy(new FailingUponPendingStep())
                 .useStoryReporterBuilder(
                         new StoryReporterBuilder()
                                 .withDefaultFormats()

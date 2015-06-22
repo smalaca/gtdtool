@@ -7,12 +7,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.concurrent.atomic.AtomicLong;
 
+import static org.springframework.web.bind.annotation.RequestMethod.POST;
+
 @RestController
 public class ProjectController {
     private final AtomicLong counter = new AtomicLong();
 
-    @RequestMapping("/project")
-    public Project project(@RequestParam(value = "name", defaultValue = "Some project") String projectName) {
-        return new Project(counter.incrementAndGet(), projectName);
+    @RequestMapping(value = "/project", method = POST)
+    public Project project(@RequestParam String name) {
+        return new Project(counter.incrementAndGet(), name);
     }
 }
