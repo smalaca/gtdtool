@@ -25,9 +25,6 @@
         <module name="AvoidInlineConditionals"/>
         <module name="AvoidNestedBlocks"/>
         <module name="AvoidStarImport"/>
-        <module name="AvoidStaticImport">
-            <property name="excludes" value=""/>
-        </module>
         <module name="BooleanExpressionComplexity"/>
         <module name="ClassDataAbstractionCoupling">
             <property name="max" value="5"/>
@@ -55,7 +52,6 @@
         <module name="EqualsHashCode"/>
         <module name="ExplicitInitialization"/>
         <module name="FinalClass"/>
-        <module name="FinalLocalVariable"/>
         <module name="GenericWhitespace"/>
 		<module name="HideUtilityClassConstructor"/>
 		<module name="IllegalCatch"/>

@@ -1,9 +1,9 @@
 package com.smalaca.gtdtool.applicationdomain;
 
 public class ApplicationError {
-    private ApplicationErrorType type;
-    private String url;
-    private String reason;
+    private final ApplicationErrorType type;
+    private final String url;
+    private final String reason;
 
     public ApplicationError(ApplicationErrorType type, String url, String reason) {
         this.type = type;

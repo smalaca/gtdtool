@@ -17,7 +17,7 @@ import static com.smalaca.gtdtool.applicationdomain.ApplicationErrorType.INVALID
 public class ExceptionHandlerController {
 
     @ExceptionHandler(EntityNotFoundException.class)
-    @ResponseStatus(value= HttpStatus.NOT_FOUND)
+    @ResponseStatus(value = HttpStatus.NOT_FOUND)
     @ResponseBody
     public ApplicationError entityNotFound(HttpServletRequest request, EntityNotFoundException exception) {
         return new ApplicationError(INVALID_REQUEST_DATA, extractRequestUrl(request), exception.getMessage());
