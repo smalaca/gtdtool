@@ -32,6 +32,7 @@
     <project.config.directory>config</project.config.directory>
 
     <!-- DEPENDENCIES VERSIONS -->
+    <maven.compiler.version>3.3</maven.compiler.version>
     <jbehave.version>3.8</jbehave.version>
     <jbehave.spring.version>3.9.5</jbehave.spring.version>
     <junit.version>4.11</junit.version>
@@ -129,6 +130,16 @@
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${maven.compiler.version}</version>
+        <configuration>
+          <source>${java.version}</source>
+          <target>${java.version}</target>
+        </configuration>
       </plugin>
     </plugins>
   </build>

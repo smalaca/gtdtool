@@ -4,13 +4,14 @@ import com.smalaca.gtdtool.domain.Project;
 import com.smalaca.gtdtool.domain.UndefinedItem;
 import com.smalaca.gtdtool.repository.EntityNotFoundException;
 import com.smalaca.gtdtool.repository.UndefinedItemRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UndefinedItemController {
-    private UndefinedItemRepository repository = new UndefinedItemRepository();
+    @Autowired private UndefinedItemRepository repository;
 
     @RequestMapping(value = "/undefineditem/converttoproject/{id}")
     public Project convertToProject(@PathVariable long id) {
