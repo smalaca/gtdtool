@@ -35,6 +35,6 @@ public class ProjectStories extends JBehaveConfiguration {
 
     @Then("project with given name was created")
     public void thenTheProjectWasCreated() {
-        assertThat(project.getName(), is(projectName + " but different"));
+        assertThat(project.getName(), is(projectName));
     }
 }
