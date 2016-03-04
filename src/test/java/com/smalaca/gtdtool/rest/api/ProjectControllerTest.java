@@ -15,6 +15,7 @@ public class ProjectControllerTest {
         Project project = controller.project(projectName);
 
         assertThat(project.getId(), is(1L));
-        assertThat(project.getName(), is(projectName));
+//        assertThat(project.getName(), is(projectName));
+        assertThat(project.getName(), is("different name"));
     }
 }

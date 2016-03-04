@@ -12,7 +12,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 @RestController
 public class ProjectController {
     private final AtomicLong counter = new AtomicLong();
-    private final long someFan_das_cs = 13L;
+
     @RequestMapping(value = "/project", method = POST)
     public Project project(@RequestParam String name) {
         return new Project(counter.incrementAndGet(), name);
