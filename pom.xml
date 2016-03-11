@@ -164,9 +164,15 @@
             <version>${failsafe.and.surefire.version}</version>
             <executions>
               <execution>
-                <id>integration-test</id>
+                <id>system-tests-serial</id>
+                <phase>integration-test</phase>
                 <goals>
                   <goal>integration-test</goal>
+                </goals>
+              </execution>
+              <execution>
+                <id>integration-test</id>
+                <goals>
                   <goal>verify</goal>
                 </goals>
               </execution>
@@ -185,7 +191,7 @@
             <executions>
               <execution>
                 <id>run-stories-as-embeddables</id>
-                <phase>integration-test</phase>
+                <phase>verify</phase>
                 <configuration>
                   <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
                   <includes>
@@ -196,7 +202,7 @@
                   <ignoreFailureInView>false</ignoreFailureInView>
                 </configuration>
                 <goals>
-                  <goal>run-stories-as-embeddables</goal>
+                  <goal>unpack-view-resources</goal>
                 </goals>
               </execution>
             </executions>
